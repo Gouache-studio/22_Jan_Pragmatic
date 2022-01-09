@@ -6,6 +6,18 @@
     <h1>
         Testing!
     </h1>
+
+    <form action="/account/hello_world/" method="post">
+        <!-- CSRF verification 장고에서 알아서 만들어 줌-->
+        {% csrf_token %}
+        <!-- 부트스트랩에서 가져온 버튼생성 -->
+        <input type = "submit" class="btn btn-primary" value="POST">
+    </form>
+
+    <h1>
+        {{ text }}
+    </h1>
+
 </div>
 
 
