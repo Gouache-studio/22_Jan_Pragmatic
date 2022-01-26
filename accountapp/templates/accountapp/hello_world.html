@@ -2,21 +2,26 @@
 
 {% block content %}
 
-<div style="height: 20rem; background-color: #38df81; border-radius: 1rem; margin: 2rem;">
-    <h1>
-        Testing!
+<div style="border-radius: 1rem; margin: 2rem; text-align : center;">
+    <h1 style="font-family: 'Space Mono', monospace;">
+        Hello_world LIST!
     </h1>
 
     <form action="/account/hello_world/" method="post">
         <!-- CSRF verification 장고에서 알아서 만들어 줌-->
         {% csrf_token %}
+        <div>
+            <input type="text" name="hello_world_input">
+        </div>
         <!-- 부트스트랩에서 가져온 버튼생성 -->
         <input type = "submit" class="btn btn-primary" value="POST">
     </form>
 
+    {% if hello_world_list %}
     <h1>
-        {{ text }}
+        {{ hello_world_list }}
     </h1>
+    {% endif %}
 
 </div>
 
